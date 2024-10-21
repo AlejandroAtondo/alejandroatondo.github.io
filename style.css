@@ -19,14 +19,14 @@ body {
 }
 
 .sidebar {
-    width: 500px;
-    
+    width: 25%;
     color: #333;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100vh; 
+    height: auto;
+    min-height: 100vh; 
 }
 
 
@@ -55,14 +55,26 @@ body {
 }
 
 a {
-    
-    color: #333;
+    color: #2ecc71;
+    position: relative;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    background: #2ecc71;
+    transition: width 0.3s;
 }
+
+a:hover::after {
+    width: 100%;
+}
+
 
 main {
     flex-grow: 1; 
